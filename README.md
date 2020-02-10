@@ -21,17 +21,17 @@ The library allows you to:
 ## Installation
 
 - Add Angular material to your project:
-    ```bash
+    ```javascript
     ng add @angular/material
     ```
 
 - Install MatMSAutocomplete
-    ```bash
+    ```javascript
     $ npm install ngx-mat-msautocomplete
     ```
     
 - Include ngx-mat-msautocomplete in your app.module.ts
-    ```python
+    ```javascript
     import { NgxMatMSAutocompleteModule } from 'ngx-mat-msautocomplete';
     
     @NgModule({
@@ -45,14 +45,14 @@ The library allows you to:
     ```
 
 - Add the component selector in your component.html file:
-    ```python
+    ```html
     <mat-ms-auto [(dropdownList)]="dropdownList" displayKey="display"></mat-ms-auto>
     ```
     
 ## Example
 
 - Dropdown options - Input array of objects in TS file
-    ```python
+    ```javascript
     fruitsList = [
     {
       info: 'This is apple',
@@ -77,6 +77,6 @@ The library allows you to:
   ```
 
 - Mat Multiselect Autocomplete component in HTML file
-  ```python
+  ```html
   <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name"></mat-ms-auto>
   ```
