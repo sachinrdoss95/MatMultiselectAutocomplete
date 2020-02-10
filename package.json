@@ -3,6 +3,28 @@
   "version": "0.0.1",
   "description": "Angular material Dropdown with multi-select, master toggle and autocomplete filter",
   "author": "Sachin R Doss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sachinrdoss95/MatMultiselectAutocomplete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sachinrdoss95/MatMultiselectAutocomplete/issues"
+  },
+  "homepage": "https://github.com/sachinrdoss95/MatMultiselectAutocomplete",
+  "keywords": [
+    "angular",
+    "typescript",
+    "directive",
+    "plugin",
+    "angular-material",
+    "mat",
+    "multi-select",
+    "multiselect",
+    "dropdown",
+    "auto",
+    "auto-complete",
+    "autocomplete"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host localhost --port 9999",
