@@ -6,8 +6,11 @@ export class AutocompletePipe implements PipeTransform {
   transform(dropdownList: any[], filterObj: any): any {
     const filterStringLower = filterObj.filterKey.toLowerCase();
     return dropdownList.filter(x => {
-      return (x[filterObj.displayKey].toLowerCase().includes(filterStringLower) ||
-      (filterObj.infoKey) ? x[filterObj.infoKey].toLowerCase().includes(filterStringLower) : false);
+      let returnVal = x[filterObj.displayKey].toLowerCase().includes(filterStringLower);
+      if (filterObj.infoKey) {
+        returnVal = returnVal || x[filterObj.infoKey].toLowerCase().includes(filterStringLower);
+      }
+      return returnVal;
     });
   }
 }
