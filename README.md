@@ -1,27 +1,116 @@
 # MatMSAutocompleteLib
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
+Mat MultiSelect Autocomplete is a simple multiselect dropdown with master toggle and autocomplete filter, designed with angular material.
 
-## Development server
+## What is it good for?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The library allows you to:
 
-## Code scaffolding
+- Create a multiselect component with an array of objects as input
+- configuraable filter, selectall and clearall options
+- Output => Input array of objects with flag: selection: boolean 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Dependencies
 
-## Build
+- Angular CDK ^8.2.3,
+- Angular Material ^8.2.3
+- @material-extended/mde ^2.3.1
+- material icons
+- css import for material theme
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Installation
 
-## Running unit tests
+- Add Angular material to your project:
+    ```javascript
+    $ ng add @angular/material
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Install MatMSAutocomplete
+    ```javascript
+    $ npm install ngx-mat-msautocomplete
+    ```
+    
+- Include ngx-mat-msautocomplete in your app.module.ts
+    ```javascript
+    import { NgxMatMSAutocompleteModule } from 'ngx-mat-msautocomplete';
+    
+    @NgModule({
+      declarations: [...],
+      imports: [
+        ...,
+        NgxMatMSAutocompleteModule
+      ],
+      ...
+    })
+    ```
 
-## Running end-to-end tests
+- Add the component selector in your component.html file:
+    ```html
+    <mat-ms-auto [(dropdownList)]="dropdownList" displayKey="display"></mat-ms-auto>
+    ```
+    
+## Example
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Dropdown options - Input array of objects in TS file
+    ```javascript
+    fruitsList = [
+      {
+        info: 'This is apple',
+        name: 'Apple'
+      }, {
+        info: 'This is orange',
+        name: 'Orange'
+      }, {
+        info: 'This is lemon',
+        name: 'Lemon'
+      }, {
+        info: 'This is gauva',
+        name: 'Gauva'
+      }, {
+        info: 'This is banana',
+        name: 'Banana'
+      }, {
+        info: 'This is kiwi',
+        name: 'Kiwi'
+      }
+    ];
+    ```
 
-## Further help
+- Mat Multiselect Autocomplete component in HTML file
+    ```html
+    <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name"></mat-ms-auto>
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Call method on change / selection:
+    ```html
+    <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name" (selectionChanged)="onChange()"></mat-ms-auto>
+    ```
+
+## Other Options
+
+  ```html
+  <mat-ms-auto 
+  name="mat-ms-auto"
+  placeholder="Types of fruits"
+  [(dropdownList)]="fruitsList"
+  displayKey="name"
+  infoKey="info"
+  (selectionChanged)="onChange()"
+  [masterToggle]="true"
+  [alignInfoRight]="true"
+  matIcon="eco"
+  matHint="List of fruits"
+  disabled
+  required></mat-ms-auto>
+  ```
+
+Attribute | Attribute type | Default value | Mandatory? | Description
+------------ | ------------- | ------------- | ------------- | -------------
+placeholder | string | null | false | Placeholder for the input field
+disabled | boolean | false | false | Should the input field be disabled
+required | boolean | false | false | Is the form field required
+masterToggle | boolean | true | false | Display 'All' checkbox to trigger master selection toggle
+infoKey | string | null | false | Display info values for each dropdown option. Value should be a key in the input array of objects
+alignInfoRight | boolean | true | false | Align info display to right (default - true) or left (false) for each dropdown option
+matIcon | string | null | false | <mat-icon>...</mat-icon>. Value should be the material icon key
+matHint | string | null | false | <mat-hint>...</mat-hint>. Value should be hint
