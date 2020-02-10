@@ -25,7 +25,7 @@ export class NgxMatMSAutocompleteComponent implements ControlValueAccessor {
   @Input() infoKey: string = '';
   @Input() masterToggle: boolean = true;
   @Input() alignInfoRight: boolean = false;
-  @Input() matIcon: string = '';
+  @Input() matIcon: string = 'arrow_drop_down';
   @Input() matHint: string = '';
 
   // Dropdown List 2-way binding

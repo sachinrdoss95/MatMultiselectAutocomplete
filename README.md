@@ -1,6 +1,6 @@
-# MatMSAutocompleteLib
+# NgxMatMSAutocomplete
 
-Mat MultiSelect Autocomplete is a simple multiselect dropdown with master toggle and autocomplete filter, designed with angular material.
+Ngx Mat MultiSelect Autocomplete is a simple multiselect dropdown with master toggle and autocomplete filter, designed with angular material. [ngx-mat-msautocomplete](https://www.npmjs.com/package/ngx-mat-msautocomplete)
 
 <img src="images/other-options.PNG">
 
@@ -16,10 +16,12 @@ The library allows you to:
 - Autocomplete search filter, select all and clear all options
 - Output => Input array of objects with flag: selection: boolean 
 
-# Dependencies
+## Dependencies
 
-- Angular CDK ^8.2.3,
-- Angular Material ^8.2.3
+- "@angular/common": "^8.2.14",
+- "@angular/core": "^8.2.14",
+- "@angular/material": "^8.2.3",
+- "@angular/cdk": "^8.2.3"
 - material icons
 - css import for material theme
 
@@ -30,13 +32,19 @@ The library allows you to:
     $ ng add @angular/material
     ```
 
+- Add Angular cdk to your project:
+    ```javascript
+    $ ng add @angular/cdk
+    ```
+
 - Install MatMSAutocomplete
     ```javascript
-    $ npm install ngx-mat-msautocomplete
+    $ npm i ngx-mat-msautocomplete --save
     ```
-    
+
 - Include ngx-mat-msautocomplete in your app.module.ts
     ```javascript
+    ...
     import { NgxMatMSAutocompleteModule } from 'ngx-mat-msautocomplete';
     
     @NgModule({
@@ -49,7 +57,7 @@ The library allows you to:
     })
     ```
 
-- Add the component selector in your component.html file:
+- Add the selector in your component.html file:
     ```html
     <mat-ms-auto [(dropdownList)]="dropdownList" displayKey="display"></mat-ms-auto>
     ```
@@ -81,7 +89,7 @@ The library allows you to:
     ];
     ```
 
-- Mat Multiselect Autocomplete component in HTML file
+- Ngx Mat MultiSelect Autocomplete component in HTML file
     ```html
     <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name"></mat-ms-auto>
     ```
@@ -91,8 +99,8 @@ The library allows you to:
     <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name" (selectionChanged)="onChange()"></mat-ms-auto>
     ```
 
-- Default selection
-  To select an option by default, add a key => selection: true to the required option in the input array of objects:
+- Default selection:
+  To select an option by default, add a key => 'selection: true' to the required option in the input array of objects:
   Example:
     ```javascript
     fruitsList = [
@@ -135,5 +143,5 @@ required | boolean | false | Is the form field required
 masterToggle | boolean | true | Display 'All' checkbox to trigger master selection toggle
 infoKey | string | null | Display info values for each dropdown option. Value should be a key in the input array of objects
 alignInfoRight | boolean | false | Align info display to right (true) or left (false) for each dropdown option
-matIcon | string | null | ```<mat-icon>...</mat-icon>```. Value should be the material icon key
-matHint | string | null | ```<mat-hint>...</mat-hint>```. Value should be hint
+matIcon | string | "arrow_drop_down" | ```<mat-icon>...</mat-icon>```. Value should be the material icon identifier
+matHint | string | null | ```<mat-hint>...</mat-hint>```. Value should be a string
