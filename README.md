@@ -91,26 +91,26 @@ The library allows you to:
   ```html
   <mat-ms-auto 
   name="mat-ms-auto"
+  placeholder="Types of fruits"
   [(dropdownList)]="fruitsList"
   displayKey="name"
   infoKey="info"
   (selectionChanged)="onChange()"
   [masterToggle]="true"
   [alignInfoRight]="true"
-  matIcon="phone"
+  matIcon="eco"
   matHint="List of fruits"
-  disabled="false"
-  placeholder="Types of fruits"
+  disabled
   required></mat-ms-auto>
   ```
 
 Attribute | Attribute type | Default value | Mandatory? | Description
 ------------ | ------------- | ------------- | ------------- | -------------
+placeholder | string | null | false | Placeholder for the input field
+disabled | boolean | false | false | Should the input field be disabled
+required | boolean | false | false | Is the form field required
 masterToggle | boolean | true | false | Display 'All' checkbox to trigger master selection toggle
 infoKey | string | null | false | Display info values for each dropdown option. Value should be a key in the input array of objects
 alignInfoRight | boolean | true | false | Align info display to right (default - true) or left (false) for each dropdown option
 matIcon | string | null | false | <mat-icon>...</mat-icon>. Value should be the material icon key
 matHint | string | null | false | <mat-hint>...</mat-hint>. Value should be hint
-placeholder | string | null | false | Placeholder for the input field
-disabled | boolean | false | false | Should the input field be disabled
-required | boolean | false | false | Is the form field required
