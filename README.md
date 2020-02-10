@@ -89,7 +89,7 @@ The library allows you to:
 ## Other Options
 
 Attribute | Attribute type | Default value | Mandatory? | Description
------------- | -------------
+------------ | ------------- | ------------- | ------------- | -------------
 masterToggle | boolean | true | false | Display 'All' checkbox to trigger master selection toggle
 infoKey | string | null | false | Display info values for each dropdown option. Value should be a key in the input array of objects
 alignInfoRight | boolean | true | false | Align info display to right (default - true) or left (false) for each dropdown option
