@@ -12,9 +12,10 @@ Ngx Mat MultiSelect Autocomplete is a simple multiselect dropdown with master to
 
 The library allows you to:
 
-- Create a multiselect component with an array of objects as input
-- Autocomplete search filter, select all and clear all options
-- Output => Input array of objects with flag: selection: boolean 
+- Create a multiselect component with an array of objects (list) as input
+- 2 way data binding with the input list. New key 'selection : boolean' will be added to each object of the input list
+- Autocomplete search filter to find matching options in list, filtering in display text and if present, info text
+- Master toggle to select all or clear all selection
 
 ## Dependencies
 
