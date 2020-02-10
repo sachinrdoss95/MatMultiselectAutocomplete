@@ -2,19 +2,24 @@
 
 Mat MultiSelect Autocomplete is a simple multiselect dropdown with master toggle and autocomplete filter, designed with angular material.
 
+<img src="images/other-options.PNG">
+
+<img src="images/master-toggle.PNG">
+
+<img src="images/dropdown-autocomplete.PNG">
+
 ## What is it good for?
 
 The library allows you to:
 
 - Create a multiselect component with an array of objects as input
-- configuraable filter, selectall and clearall options
+- Autocomplete search filter, select all and clear all options
 - Output => Input array of objects with flag: selection: boolean 
 
 # Dependencies
 
 - Angular CDK ^8.2.3,
 - Angular Material ^8.2.3
-- @material-extended/mde ^2.3.1
 - material icons
 - css import for material theme
 
@@ -86,6 +91,24 @@ The library allows you to:
     <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name" (selectionChanged)="onChange()"></mat-ms-auto>
     ```
 
+- Default selection
+  To select an option by default, add a key => selection: true to the required option in the input array of objects:
+  Example:
+    ```javascript
+    fruitsList = [
+      {
+        info: 'This is apple',
+        name: 'Apple',
+        selection: true
+      }, {
+        info: 'This is orange',
+        name: 'Orange',
+        selection: false
+      },
+      ...
+    ];
+    ```
+
 ## Other Options
 
   ```html
@@ -104,13 +127,13 @@ The library allows you to:
   required></mat-ms-auto>
   ```
 
-Attribute | Attribute type | Default value | Mandatory? | Description
------------- | ------------- | ------------- | ------------- | -------------
-placeholder | string | null | false | Placeholder for the input field
-disabled | boolean | false | false | Should the input field be disabled
-required | boolean | false | false | Is the form field required
-masterToggle | boolean | true | false | Display 'All' checkbox to trigger master selection toggle
-infoKey | string | null | false | Display info values for each dropdown option. Value should be a key in the input array of objects
-alignInfoRight | boolean | true | false | Align info display to right (default - true) or left (false) for each dropdown option
-matIcon | string | null | false | <mat-icon>...</mat-icon>. Value should be the material icon key
-matHint | string | null | false | <mat-hint>...</mat-hint>. Value should be hint
+Attribute | Attribute type | Default value | Description
+------------ | ------------- | ------------- | -------------
+placeholder | string | null | Placeholder for the input field
+disabled | boolean | false | Should the input field be disabled
+required | boolean | false | Is the form field required
+masterToggle | boolean | true | Display 'All' checkbox to trigger master selection toggle
+infoKey | string | null | Display info values for each dropdown option. Value should be a key in the input array of objects
+alignInfoRight | boolean | false | Align info display to right (true) or left (false) for each dropdown option
+matIcon | string | null | ```<mat-icon>...</mat-icon>```. Value should be the material icon key
+matHint | string | null | ```<mat-hint>...</mat-hint>```. Value should be hint
