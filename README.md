@@ -2,7 +2,7 @@
 
 Ngx Mat MultiSelect Autocomplete is a simple multiselect dropdown with master toggle and autocomplete filter, designed with angular material. [ngx-mat-msautocomplete](https://www.npmjs.com/package/ngx-mat-msautocomplete)
 
-<img src="images/other-options.PNG">
+<img src="images/ngx-mat-msautocomplete.PNG">
 
 <img src="images/master-toggle.PNG">
 
@@ -22,8 +22,6 @@ The library allows you to:
 - "@angular/core": "^8.2.14",
 - "@angular/material": "^8.2.3",
 - "@angular/cdk": "^8.2.3"
-- material icons
-- css import for material theme
 
 ## Installation
 
