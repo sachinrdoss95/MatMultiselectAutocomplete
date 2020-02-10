@@ -88,6 +88,22 @@ The library allows you to:
 
 ## Other Options
 
+    ```html
+    <mat-ms-auto 
+    name="mat-ms-auto"
+    [(dropdownList)]="fruitsList"
+    displayKey="name"
+    infoKey="info"
+    (selectionChanged)="onChange()"
+    [masterToggle]="true"
+    [alignInfoRight]="true"
+    matIcon="phone"
+    matHint="List of fruits"
+    disabled="false"
+    placeholder="Types of fruits"
+    required></mat-ms-auto>
+    ```
+
 Attribute | Attribute type | Default value | Mandatory? | Description
 ------------ | ------------- | ------------- | ------------- | -------------
 masterToggle | boolean | true | false | Display 'All' checkbox to trigger master selection toggle
