@@ -25,7 +25,7 @@
                 [indeterminate]="isAtleastOneSelected()"
                 (change)="MasterToggle()">All</mat-checkbox>
             </li>
-            <li *ngFor="let listItem of dropdownList | autocomplete: autocompleteInput.value">
+            <li *ngFor="let listItem of dropdownList | autocomplete: {filterKey: autocompleteInput.value, displayKey: displayKey, infoKey: infoKey}">
                 <mat-checkbox [(ngModel)]="listItem.selection"
                 (change)="DropdownValueSelected()">{{ listItem[displayKey] }}</mat-checkbox>
                 <div *ngIf="infoKey" [ngClass]="'listitem-info ' + (alignInfoRight ? 'right' : 'left')">

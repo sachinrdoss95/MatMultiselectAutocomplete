@@ -3,10 +3,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'autocomplete'
 })
 export class AutocompletePipe implements PipeTransform {
-  transform(dropdownList: any[], filterString: string): any {
-    const filterStringLower = filterString.toLowerCase();
+  transform(dropdownList: any[], filterObj: any): any {
+    const filterStringLower = filterObj.filterKey.toLowerCase();
     return dropdownList.filter(x => {
-      return (x.display.toLowerCase().includes(filterStringLower));
+      return (x[filterObj.displayKey].toLowerCase().includes(filterStringLower) ||
+      (filterObj.infoKey) ? x[filterObj.infoKey].toLowerCase().includes(filterStringLower) : false);
     });
   }
 }

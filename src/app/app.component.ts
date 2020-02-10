@@ -7,39 +7,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MatMSAutocompleteLib';
-  dropdownList = [
+  fruitsList = [
     {
-      info: 'apple',
-      display: 'Apple',
-      selection: false
+      info: 'This is apple',
+      name: 'Apple'
     }, {
-      info: 'orange',
-      display: 'Orange',
-      selection: true
+      info: 'This is orange',
+      name: 'Orange'
     }, {
-      info: 'lemon',
-      display: 'Lemon',
-      selection: false
+      info: 'This is lemon',
+      name: 'Lemon'
     }, {
-      info: 'gauva',
-      display: 'Gauva',
-      selection: false
+      info: 'This is gauva',
+      name: 'Gauva'
     }, {
-      info: 'gauva1',
-      display: 'Gauva1',
-      selection: false
+      info: 'This is banana',
+      name: 'Banana'
     }, {
-      info: 'gauva2',
-      display: 'Gauva2',
-      selection: false
-    }, {
-      info: 'gauva3',
-      display: 'Gauva3',
-      selection: false
-    }, {
-      info: 'gauva4',
-      display: 'Gauva4',
-      selection: false
+      info: 'This is kiwi',
+      name: 'Kiwi'
     }
   ];
 

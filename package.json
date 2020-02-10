@@ -25,6 +25,7 @@
     "auto-complete",
     "autocomplete"
   ],
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host localhost --port 9999",

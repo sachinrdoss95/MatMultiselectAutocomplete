@@ -58,7 +58,7 @@ export class NgxMatMSAutocompleteComponent implements ControlValueAccessor {
   constructor(private _elementRef: ElementRef<HTMLElement>) {}
 
   DropdownValueSelected() {
-    const selectedVals = this.dropdownList.filter(x => x.selection).map(x => x.display);
+    const selectedVals = this.dropdownList.filter(x => x.selection).map(x => x[this.displayKey]);
     if (selectedVals.length === 1) {
       this.writeValue(selectedVals[0]);
     } else if (selectedVals.length > 1) {
