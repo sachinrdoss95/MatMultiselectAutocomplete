@@ -13,14 +13,13 @@ Mat MultiSelect Autocomplete is a simple multiselect dropdown with master toggle
 The library allows you to:
 
 - Create a multiselect component with an array of objects as input
-- configuraable filter, selectall and clearall options
+- Autocomplete search filter, select all and clear all options
 - Output => Input array of objects with flag: selection: boolean 
 
 # Dependencies
 
 - Angular CDK ^8.2.3,
 - Angular Material ^8.2.3
-- @material-extended/mde ^2.3.1
 - material icons
 - css import for material theme
 
@@ -92,6 +91,24 @@ The library allows you to:
     <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name" (selectionChanged)="onChange()"></mat-ms-auto>
     ```
 
+- Default selection
+  To select an option by default, add a key => selection: true to the required option in the input array of objects:
+  Example:
+    ```javascript
+    fruitsList = [
+      {
+        info: 'This is apple',
+        name: 'Apple',
+        selection: true
+      }, {
+        info: 'This is orange',
+        name: 'Orange',
+        selection: false
+      },
+      ...
+    ];
+    ```
+
 ## Other Options
 
   ```html
@@ -118,5 +135,5 @@ required | boolean | false | Is the form field required
 masterToggle | boolean | true | Display 'All' checkbox to trigger master selection toggle
 infoKey | string | null | Display info values for each dropdown option. Value should be a key in the input array of objects
 alignInfoRight | boolean | false | Align info display to right (default - true) or left (false) for each dropdown option
-matIcon | string | null | ```html<mat-icon>...</mat-icon>```. Value should be the material icon key
-matHint | string | null | ```html<mat-hint>...</mat-hint>```. Value should be hint
+matIcon | string | null | ```<mat-icon>...</mat-icon>```. Value should be the material icon key
+matHint | string | null | ```<mat-hint>...</mat-hint>```. Value should be hint
