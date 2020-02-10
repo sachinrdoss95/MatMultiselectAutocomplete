@@ -134,6 +134,6 @@ disabled | boolean | false | Should the input field be disabled
 required | boolean | false | Is the form field required
 masterToggle | boolean | true | Display 'All' checkbox to trigger master selection toggle
 infoKey | string | null | Display info values for each dropdown option. Value should be a key in the input array of objects
-alignInfoRight | boolean | false | Align info display to right (default - true) or left (false) for each dropdown option
+alignInfoRight | boolean | false | Align info display to right (true) or left (false) for each dropdown option
 matIcon | string | null | ```<mat-icon>...</mat-icon>```. Value should be the material icon key
 matHint | string | null | ```<mat-hint>...</mat-hint>```. Value should be hint
