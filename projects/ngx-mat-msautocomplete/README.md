@@ -1,6 +1,6 @@
-# MatMSAutocompleteLib
+# NgxMatMSAutocomplete
 
-Mat MultiSelect Autocomplete is a simple multiselect dropdown with master toggle and autocomplete filter, designed with angular material.
+Ngx Mat MultiSelect Autocomplete is a simple multiselect dropdown with master toggle and autocomplete filter, designed with angular material.
 
 <img src="images/other-options.PNG">
 
