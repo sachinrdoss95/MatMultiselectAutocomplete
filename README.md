@@ -22,7 +22,7 @@ The library allows you to:
 
 - Add Angular material to your project:
     ```javascript
-    ng add @angular/material
+    $ ng add @angular/material
     ```
 
 - Install MatMSAutocomplete
@@ -54,29 +54,47 @@ The library allows you to:
 - Dropdown options - Input array of objects in TS file
     ```javascript
     fruitsList = [
-    {
-      info: 'This is apple',
-      name: 'Apple'
-    }, {
-      info: 'This is orange',
-      name: 'Orange'
-    }, {
-      info: 'This is lemon',
-      name: 'Lemon'
-    }, {
-      info: 'This is gauva',
-      name: 'Gauva'
-    }, {
-      info: 'This is banana',
-      name: 'Banana'
-    }, {
-      info: 'This is kiwi',
-      name: 'Kiwi'
-    }
-  ];
-  ```
+      {
+        info: 'This is apple',
+        name: 'Apple'
+      }, {
+        info: 'This is orange',
+        name: 'Orange'
+      }, {
+        info: 'This is lemon',
+        name: 'Lemon'
+      }, {
+        info: 'This is gauva',
+        name: 'Gauva'
+      }, {
+        info: 'This is banana',
+        name: 'Banana'
+      }, {
+        info: 'This is kiwi',
+        name: 'Kiwi'
+      }
+    ];
+    ```
 
 - Mat Multiselect Autocomplete component in HTML file
-  ```html
-  <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name"></mat-ms-auto>
-  ```
+    ```html
+    <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name"></mat-ms-auto>
+    ```
+
+- Call method on change / selection:
+    ```html
+    <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name" (selectionChanged)="onChange()"></mat-ms-auto>
+    ```
+
+## Other Options
+
+Attribute | Attribute type | Default value | Mandatory? | Description
+------------ | -------------
+masterToggle | boolean | true | false | Display 'All' checkbox to trigger master selection toggle
+infoKey | string | null | false | Display info values for each dropdown option. Value should be a key in the input array of objects
+alignInfoRight | boolean | true | false | Align info display to right (default - true) or left (false) for each dropdown option
+matIcon | string | null | false | <mat-icon>...</mat-icon>. Value should be the material icon key
+matHint | string | null | false | <mat-hint>...</mat-hint>. Value should be hint
+placeholder | string | null | false | Placeholder for the input field
+disabled | boolean | false | false | Should the input field be disabled
+required | boolean | false | false | Is the form field required
