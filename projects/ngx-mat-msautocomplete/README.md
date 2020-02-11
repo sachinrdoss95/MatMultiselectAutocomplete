@@ -36,7 +36,7 @@ The library allows you to:
     $ ng add @angular/cdk
     ```
 
-- Install MatMSAutocomplete
+- Install NgxMatMSAutocomplete
     ```javascript
     $ npm i ngx-mat-msautocomplete --save
     ```
