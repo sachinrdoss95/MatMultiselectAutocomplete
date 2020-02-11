@@ -1,16 +1,16 @@
 {
   "name": "ngx-mat-msautocomplete",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Angular material Dropdown with multi-select, master toggle and autocomplete filter",
   "author": "Sachin R Doss",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sachinrdoss95/MatMultiselectAutocomplete.git"
+    "url": "https://github.com/sachinrdoss95/NgxMatMSAutocomplete.git"
   },
   "bugs": {
-    "url": "https://github.com/sachinrdoss95/MatMultiselectAutocomplete/issues"
+    "url": "https://github.com/sachinrdoss95/NgxMatMSAutocomplete/issues"
   },
-  "homepage": "https://github.com/sachinrdoss95/MatMultiselectAutocomplete",
+  "homepage": "https://github.com/sachinrdoss95/NgxMatMSAutocomplete",
   "keywords": [
     "angular",
     "typescript",
