@@ -1,4 +1,4 @@
-import { Component, Input, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, Input, HostListener, ElementRef, Output, EventEmitter, OnChanges } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR  } from '@angular/forms';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { MatFormFieldControl } from '@angular/material/form-field';
@@ -9,7 +9,7 @@ import { MatFormFieldControl } from '@angular/material/form-field';
   styleUrls: ['./ngx-mat-msautocomplete.component.scss'],
   providers: [{provide: MatFormFieldControl, useExisting: NgxMatMSAutocompleteComponent}]
 })
-export class NgxMatMSAutocompleteComponent implements ControlValueAccessor {
+export class NgxMatMSAutocompleteComponent implements ControlValueAccessor, OnChanges {
   // ANGULAR MAT FORM FIELD VARIABLES
   static nextId = 0;
 
@@ -21,12 +21,12 @@ export class NgxMatMSAutocompleteComponent implements ControlValueAccessor {
   onChange = (_: any) => {};
 
   // Custom Params
-  @Input() displayKey: string = '';
-  @Input() infoKey: string = '';
+  @Input('display-key') displayKey: string = '';
+  @Input('info-key') infoKey: string = '';
   @Input() masterToggle: boolean = true;
   @Input() alignInfoRight: boolean = false;
-  @Input() matIcon: string = 'arrow_drop_down';
-  @Input() matHint: string = '';
+  @Input() icon: string = '';
+  @Input() hint: string = '';
 
   // Dropdown List 2-way binding
   _dropdownList: Array<any>;
@@ -56,6 +56,16 @@ export class NgxMatMSAutocompleteComponent implements ControlValueAccessor {
   }
 
   constructor(private _elementRef: ElementRef<HTMLElement>) {}
+
+  ngOnChanges() {
+    if (!this.dropdownList) {
+      throw new TypeError('\'dropdownList\' is Required');
+    } else if (!(this.dropdownList instanceof Array)) {
+      throw new TypeError('\'dropdownList\' should be an Array of objects');
+    } else if (!this.displayKey) {
+      throw new TypeError('\'display-key\' is required');
+    }
+  }
 
   DropdownValueSelected() {
     const selectedVals = this.dropdownList.filter(x => x.selection).map(x => x[this.displayKey]);

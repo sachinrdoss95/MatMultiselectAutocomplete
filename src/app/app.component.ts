@@ -6,14 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'MatMSAutocompleteLib';
+  title = 'NgxMatMSAutocomplete';
   fruitsList = [
     {
       info: 'This is apple',
       name: 'Apple'
     }, {
       info: 'This is orange',
-      name: 'Orange'
+      name: 'Orange',
+      selection: true
     }, {
       info: 'This is lemon',
       name: 'Lemon'

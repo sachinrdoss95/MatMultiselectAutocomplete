@@ -6,8 +6,8 @@
             [required]="required"
             [placeholder]="placeholder"
             [value]="_selectedDpdwnInput ? _selectedDpdwnInput : ''" />
-            <mat-icon *ngIf="matIcon" matSuffix>{{ matIcon }}</mat-icon>
-            <mat-hint *ngIf="matHint">{{ matHint }}</mat-hint>
+            <mat-icon matSuffix>{{ icon ? icon : 'arrow_drop_down' }}</mat-icon>
+            <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
         </mat-form-field>
     </div>
     <div class="dropdown-list-container" *ngIf="displayDropdown">

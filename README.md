@@ -1,6 +1,6 @@
 # NgxMatMSAutocomplete
 
-Ngx Mat MultiSelect Autocomplete is a simple multiselect dropdown with master toggle and autocomplete filter, designed with angular material. [ngx-mat-msautocomplete](https://www.npmjs.com/package/ngx-mat-msautocomplete)
+Ngx Mat MultiSelect Autocomplete is a simple multiselect dropdown with master toggle and autocomplete filter, designed with angular material. [NPMJS: ngx-mat-msautocomplete](https://www.npmjs.com/package/ngx-mat-msautocomplete)
 
 <img src="images/ngx-mat-msautocomplete.PNG">
 
@@ -58,7 +58,7 @@ The library allows you to:
 
 - Add the selector in your component.html file:
     ```html
-    <mat-ms-auto [(dropdownList)]="dropdownList" displayKey="display"></mat-ms-auto>
+    <mat-ms-auto [(dropdownList)]="dropdownList" display-key="display"></mat-ms-auto>
     ```
     
 ## Example
@@ -90,12 +90,17 @@ The library allows you to:
 
 - Ngx Mat MultiSelect Autocomplete component in HTML file
     ```html
-    <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name"></mat-ms-auto>
+    <mat-ms-auto [(dropdownList)]="fruitsList" display-key="name"></mat-ms-auto>
+    ```
+
+    ```
+    dropdownList - Required
+    display-key - Required
     ```
 
 - Call method on change / selection:
     ```html
-    <mat-ms-auto [(dropdownList)]="fruitsList" displayKey="name" (selectionChanged)="onChange()"></mat-ms-auto>
+    <mat-ms-auto [(dropdownList)]="fruitsList" display-key="name" (selectionChanged)="onChange()"></mat-ms-auto>
     ```
 
 - Default selection:
@@ -116,20 +121,20 @@ The library allows you to:
     ];
     ```
 
-## Other Options
+## Other Options (Optional)
 
   ```html
   <mat-ms-auto 
   name="mat-ms-auto"
   placeholder="Types of fruits"
   [(dropdownList)]="fruitsList"
-  displayKey="name"
-  infoKey="info"
+  display-key="name"
+  info-key="info"
   (selectionChanged)="onChange()"
   [masterToggle]="true"
   [alignInfoRight]="true"
-  matIcon="eco"
-  matHint="List of fruits"
+  icon="arrow_drop_down"
+  hint="List of fruits"
   disabled
   required></mat-ms-auto>
   ```
@@ -140,7 +145,7 @@ placeholder | string | null | Placeholder for the input field
 disabled | boolean | false | Should the input field be disabled
 required | boolean | false | Is the form field required
 masterToggle | boolean | true | Display 'All' checkbox to trigger master selection toggle
-infoKey | string | null | Display info values for each dropdown option. Value should be a key in the input array of objects
+info-key | string | null | Display info values for each dropdown option. Value should be a key in the input array of objects
 alignInfoRight | boolean | false | Align info display to right (true) or left (false) for each dropdown option
-matIcon | string | "arrow_drop_down" | ```<mat-icon>...</mat-icon>```. Value should be the material icon identifier
-matHint | string | null | ```<mat-hint>...</mat-hint>```. Value should be a string
+icon | string | "arrow_drop_down" | Icon suffix: [Material icon keys](https://material.io/resources/icons/?style=baseline)
+hint | string | null | Description / hint
