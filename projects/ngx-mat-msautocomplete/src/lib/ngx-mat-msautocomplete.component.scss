@@ -49,6 +49,12 @@
             div.listitem-info.right {
                 text-align: right;
             }
+            mat-checkbox ::ng-deep span.mat-checkbox-label {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: 445px;
+            }
         }
         li:nth-child(even) {
             background-color: rgba(0,0,0,.04);
