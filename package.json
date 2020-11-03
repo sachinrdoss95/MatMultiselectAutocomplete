@@ -11,6 +11,7 @@
     "url": "https://github.com/sachinrdoss95/NgxMatMSAutocomplete/issues"
   },
   "homepage": "https://github.com/sachinrdoss95/NgxMatMSAutocomplete",
+  "publishConfig": { "registry": "https://www.npmjs.com/package/ngx-mat-msautocomplete" },
   "keywords": [
     "angular",
     "typescript",
