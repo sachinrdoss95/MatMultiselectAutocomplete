@@ -1,6 +1,6 @@
 {
-  "name": "mat-msautocomplete-lib",
-  "version": "1.0.1",
+  "name": "ngx-mat-msautocomplete",
+  "version": "1.0.0",
   "description": "Angular material Dropdown with multi-select, master toggle and autocomplete filter",
   "author": "Sachin R Doss",
   "repository": {
